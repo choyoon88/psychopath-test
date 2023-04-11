@@ -30,5 +30,11 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 -----
 Happy coding!
 
+### Flowchart
+
+
+
+
 ### Credit
 Test question was taken from https://kr.vonvon.me/quiz/60
+Flowchart from Excalidraw https://excalidraw.com/
