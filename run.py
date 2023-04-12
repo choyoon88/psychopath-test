@@ -24,4 +24,15 @@ print(f"Hello, {username}!")
 country = input("Enter your country name: ")
 while not country.strip():
     country = input("Invalid country name. Please enter your country: ")
-print(f"\nHello, {username} from {country}.\nLet us see if you are a psychopath from {country}\n")
+print(f"\nWelcome, {username} from {country}!")
+print(f"Let us see if you are a psychopath from {country}\n")
+print("=================================================")
+print("WARNING: This is not a verified psychopath test.")
+print("This is only for entertainment purpose.")
+print("=================================================\n")
+print("INSTRUCTION:")
+print("You will be given 6 questions with 5 answer options each.")
+print("Select the one that comes to your mind straight away.")
+print("DO NOT OVER THINK!")
+
+
