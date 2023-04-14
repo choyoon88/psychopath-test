@@ -17,12 +17,20 @@ stats = SHEET.worksheet('answers-stats')
 data = stats.get_all_values()
 
 questions = [
-    "1) You are looking at a mirror, but unsatisfied. \nWhy is that?",
-    "2) There is a portrait of a wounded solider.\nWhich part of the body is wounded?",
-    "3) You are in a dark forest alone in front of a pavilion. \nSuddenly, something passes behind you. What could that might be?",
-    "4) You got very thirsty and found a vending machine. There is nothing written on the can.\nWhat is the colour of the liquid you choose?",
-    "5) A murderer with a knife is looking for you in the house.\nYou are all alone and decides to hide. Where would you hide?",
-    "6) You finally decide to kill your enemy you have loathe for 10 years.\nYou pick up 5 euro knife instead of 50 euro one from the store. Why is that?"]
+    "1) You are looking at a mirror, but unsatisfied, \n\
+    Why is that?",
+    "2) There is a portrait of a wounded solider. \n\
+    Which part of the body is wounded?",
+    "3) You are in a dark forest alone in front of a pavilion. \n\
+    Suddenly, something passes behind you. What could that might be?",
+    "4) You got very thirsty and found a vending machine. \n\
+    There is nothing written on the can. \n\
+    What is the colour of the liquid you choose?",
+    "5) A murderer with a knife is looking for you in the house. \n\
+    You are all alone and decides to hide. Where would you hide?",
+    "6) You finally decide to kill your enemy you have loathe for 10 years. \n\
+    You pick up 5 euro knife instead of 50 euro one from the store. \n\
+    Why is that?"]
 
 options = (
     ("a. You do not like of how you look",
