@@ -98,9 +98,9 @@ for question in questions:
     user_answers.append(user_answer)
     i += 1
 
-if psycho_answers_first == user_answers or psycho_answers_second == user_answers:
+if user_answers in (psycho_answers_first, psycho_answers_second):
     print(f"\n{username}... You are a psychopath")
     print(f"{country} should be warned!")
 else:
     print(f"\n{username}... You might not be a psychopath")
-    print(f"People in {country} is safe... for now!")
+    print(f"People in {country} are safe... for now!")
