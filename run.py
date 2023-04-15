@@ -106,9 +106,36 @@ for question in questions:
     user_answers.append(user_answer)
     i += 1
 
-if user_answers in (psycho_answers_first, psycho_answers_second):
-    print(f"\n{username}... You are a psychopath")
-    print(f"{country} should be warned!")
-else:
-    print(f"\n{username}... You might not be a psychopath")
-    print(f"People in {country} are safe... for now!")
+
+def check_answers():
+    """
+    Check if the user's answer are the same as in the
+    two lists of psycho's answer.
+    Answers must meet the same alphabet on the same index.
+    And count how many same answers were found
+    to see if the user is a psychopath
+    """
+    true_answers = []
+    for index, answer in enumerate(user_answers):
+        if answer in (psycho_answers_first[index], psycho_answers_second[index]):
+            true_answers.append(answer)
+    counter = len(true_answers)
+    if counter == 0 or counter == 1:
+        print(f"\n{username}'s psycho rate is 0! Hooray!")
+    elif counter >= 2 and counter <= 4:
+        print(f"\n{username}'s psycho rate is a bit high...")
+    else:
+        print(f"\n{username}... You are a psychopath..")
+        print(f"{country} should be warned!")
+    print(counter)
+
+
+print(user_answers)
+check_answers()
+
+# if user_answers in (psycho_answers_first, psycho_answers_second):
+#     print(f"\n{username}... You are a psychopath")
+#     print(f"{country} should be warned!")
+# else:
+#     print(f"\n{username}... You might not be a psychopath")
+#     print(f"People in {country} are safe... for now!")
