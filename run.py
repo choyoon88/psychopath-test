@@ -139,23 +139,13 @@ def update_answer_sheet(data):
     print("Successfully updated on the shreadsheet")
 
 
-def update_answer_stats():
-    """
-    Update +1 to the responsive answer to get
-    the statistics of answers on each question.
-    """
-    stats_worksheet = SHEET.worksheet('answers-stats')
-    for answer in user_answers:
-        if answer == 'a':
-            stats_worksheet.update_acell('B2', 1)
-        elif answer == 'b':
-            stats_worksheet.update_acell('B3', 1)
-        elif answer == 'c':
-            stats_worksheet.update_acell('B4', 1)
-        elif answer == 'd':
-            stats_worksheet.update_acell('B5', 1)
-        elif answer == 'e':
-            stats_worksheet.update_acell('B6', 1)
+# def update_answer_stats():
+#     """
+#     Update +1 to the responsive answer to get
+#     the statistics of answers on each question.
+#     """
+#     stats_worksheet = SHEET.worksheet('answers-stats')
+#     for answer in user_answers:
 
 
 update_answer_sheet(user_answers)
