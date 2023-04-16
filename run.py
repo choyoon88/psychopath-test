@@ -14,7 +14,7 @@ SHEET = GSPREAD_CLIENT.open('psychopath-test')
 
 stats = SHEET.worksheet('answers-stats')
 
-data = stats.get_all_values()
+# data = stats.get_all_values()
 
 questions = [
     "1) You are looking at a mirror, but unsatisfied, \n\
@@ -70,12 +70,13 @@ while username.strip() == "":
     username = input("Invalid input. Please enter your name: ")
 print(f"Hello, {username}!")
 
-country = input("Enter your country name: ").capitalize()
-while not country.strip():
-    country = input("Invalid input. Please enter your country: ")
+user_country = input("Enter your country name: ").capitalize()
+while not user_country.strip():
+    user_country = input("Invalid input. Please enter your country: ")
 
-print(f"\nWelcome, {username} from {country}!")
-print(f"Let us see if you are a psychopath from {country}\n")
+
+print(f"\nWelcome, {username} from {user_country}!")
+print(f"Let us see if you are a psychopath from {user_country}\n")
 print("=================================================")
 print("WARNING: This is not a verified psychopath test.")
 print("This is only for entertainment purpose.")
@@ -126,11 +127,38 @@ def check_answers():
         print(f"\n{username}'s psycho rate is a bit high...")
     else:
         print(f"\n{username}... You are a psychopath..")
-        print(f"{country} should be warned!")
-    print(counter)
+        print(f"{user_country} should be warned!")
 
 
-print(user_answers)
+def update_answer_sheet(data):
+    """
+    Update user's answer on the user-answers spreadsheet
+    """
+    answer_worksheet = SHEET.worksheet('user-answers')
+    answer_worksheet.append_row(data)
+    print("Successfully updated on the shreadsheet")
+
+
+def update_answer_stats():
+    """
+    Update +1 to the responsive answer to get
+    the statistics of answers on each question.
+    """
+    stats_worksheet = SHEET.worksheet('answers-stats')
+    for answer in user_answers:
+        if answer == 'a':
+            stats_worksheet.update_acell('B2', 1)
+        elif answer == 'b':
+            stats_worksheet.update_acell('B3', 1)
+        elif answer == 'c':
+            stats_worksheet.update_acell('B4', 1)
+        elif answer == 'd':
+            stats_worksheet.update_acell('B5', 1)
+        elif answer == 'e':
+            stats_worksheet.update_acell('B6', 1)
+
+
+update_answer_sheet(user_answers)
 check_answers()
 
 # if user_answers in (psycho_answers_first, psycho_answers_second):
