@@ -141,7 +141,7 @@ def update_answer_sheet(data):
 
 def update_stats_sheet():
     """
-    Add +1 on each selected answer for each question
+    Increment +1 on each selected answer for each question
     to gather a statistic result of the total number of answers
     for each questions.
     """
