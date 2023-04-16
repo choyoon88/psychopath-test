@@ -139,17 +139,24 @@ def update_answer_sheet(data):
     print("Successfully updated on the shreadsheet")
 
 
-# def update_answer_stats():
-#     """
-#     Update +1 to the responsive answer to get
-#     the statistics of answers on each question.
-#     """
-#     stats_worksheet = SHEET.worksheet('answers-stats')
-#     for answer in user_answers:
+def update_stats_sheet():
+    """
+    Add +1 on each selected answer for each question
+    to gather a statistic result of the total number of answers
+    for each questions.
+    """
+    stats_worksheet = SHEET.worksheet('answers-stats')
+    row_map = {'a': 2, 'b': 3, 'c': 4, 'd': 5, 'e': 6}
+
+    for ind, answer in enumerate(user_answers):
+        cell = stats_worksheet.cell(row=row_map[answer], col=ind+2)
+        cell.value = int(cell.value) + 1
+        stats_worksheet.update_cell(row_map[answer], ind+2, cell.value)
 
 
-update_answer_sheet(user_answers)
 check_answers()
+update_answer_sheet(user_answers)
+update_stats_sheet()
 
 # if user_answers in (psycho_answers_first, psycho_answers_second):
 #     print(f"\n{username}... You are a psychopath")
@@ -157,3 +164,9 @@ check_answers()
 # else:
 #     print(f"\n{username}... You might not be a psychopath")
 #     print(f"People in {country} are safe... for now!")
+
+# if answer == 'a':
+#     cell_to_update = 'B2'
+#     current_val = stats_worksheet.acell(cell_to_update).value
+#     new_val = int(current_val) + 1
+#     stats_worksheet.update_acell(cell_to_update, new_val)
