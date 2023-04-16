@@ -34,7 +34,7 @@ questions = [
 
 options = (
     ("a. You do not like of how you look",
-     "b. There us a scar on your face",
+     "b. There is a scar on your face",
      "c. You gained weight",
      "d. The mirror is dirty",
      "e. You found a pimple on your face"),
