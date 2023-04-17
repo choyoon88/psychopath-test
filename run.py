@@ -164,6 +164,21 @@ def update_stats_sheet():
         stats_worksheet.update_cell(row_map[answer], ind+2, cell.value)
 
 
+def back_to_menu():
+    """
+    Function for going back to see the menu options.
+    """
+    go_back_menu = input('\nWould you like to see the menu? (y/n)').lower()
+    while go_back_menu not in ['y', 'n', 'Y', 'N']:
+        print('Invalid answer.')
+        go_back_menu = input('\nWould you like to see the menu? (y/n)').lower()
+    if go_back_menu == 'y':
+        menu()
+    elif go_back_menu == 'n':
+        print("\nTest Ending. Good bye")
+        sys.exit()
+
+
 def menu():
     """
     Show the selections to action after the test is done.
@@ -172,28 +187,41 @@ def menu():
     print("A - Restart Test")
     print("B - Show Test Statistics")
     print('C - End Test')
-    action = input("Enter A, B or C: ").capitalize()
+    print('D - Answer Explanation')
+    action = input("\nEnter A, B, C or D: ").capitalize()
 
-    while action not in ['a', 'b', 'c', 'A', 'B', 'C']:
+    while action not in ['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D']:
         print("\nInvalid input.")
-        action = input("Enter A, B or C: ").capitalize()
+        action = input("Enter A, B, C or D: ").capitalize()
 
     if action == 'A':
         print("\nRestarting Test...")
-        start_test()
-        check_answers()
-        update_answer_sheet(user_answers)
-        update_stats_sheet()
     elif action == 'B':
         print("\nWelcome to Psychotest statistics.")
-        print("Check how many people choose the answer for each question.\n")
+        print("Check how many people chose the answer for each question.\n")
         test_result = SHEET.worksheet('answers-stats').get_all_values()
 
         for row in test_result:
             print('\t'.join(row))
+        back_to_menu()
     elif action == 'C':
-        print("/nTest Ending. Good bye")
+        print("\nTest Ending. Good bye")
         sys.exit()
+    elif action == 'D':
+        print('\nQ1. Psychopath blames on others such as "Mirror is dirty"')
+        print('\nQ2. It is said that psychopath chooses eyes or a heart')
+        print('\nQ3. 3% of people chose either a person of different sex \n\
+or a dog. Psychopath answer was mostly a dog, the animal disturbs their crime')
+        print('\nQ4. Ordinary people chose the colour that \n\
+reflects their feeling, whereas psychopath, \n\
+who has difficulty knowing their own feeling \n\
+chose the one with no colour.')
+        print('\nQ5. Psychopath chose to hide behind the door \n\
+so they can attack and snatch the knife from \n\
+the person and kill them.')
+        print('\nQ6. Psychopath will choose a cheaper one \n\
+so they can kill them with more pain.')
+        back_to_menu()
 
 
 start_test()
