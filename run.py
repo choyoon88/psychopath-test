@@ -94,7 +94,7 @@ print("DO NOT OVER THINK!")
 start = input("\npress Enter to contiune...")
 
 psycho_answers_first = ['d', 'd', 'd', 'd', 'a', 'a']
-psycho_answers_second = ['d', 'e', 'd', 'd', 'a', 'a']
+psycho_answers_sec = ['d', 'e', 'd', 'd', 'a', 'a']
 user_answers = []
 
 
@@ -128,7 +128,7 @@ def check_answers():
     """
     true_answers = []
     for index, answer in enumerate(user_answers):
-        if answer in (psycho_answers_first[index], psycho_answers_second[index]):
+        if answer in (psycho_answers_first[index], psycho_answers_sec[index]):
             true_answers.append(answer)
     counter = len(true_answers)
     if counter == 0 or counter == 1:
@@ -186,7 +186,7 @@ def menu():
         update_stats_sheet()
     elif action == 'B':
         print("\nWelcome to Psychotest statistics.")
-        print("Check how many people choose the answers for each question.")
+        print("Check how many people choose the answers for each question.\n")
         test_result = SHEET.worksheet('answers-stats').get_all_values()
         pprint(test_result)
     elif action == 'C':
@@ -200,7 +200,7 @@ update_answer_sheet(user_answers)
 update_stats_sheet()
 menu()
 
-# if user_answers in (psycho_answers_first, psycho_answers_second):
+# if user_answers in (psycho_answers_first, psycho_answers_sec):
 #     print(f"\n{username}... You are a psychopath")
 #     print(f"{country} should be warned!")
 # else:
