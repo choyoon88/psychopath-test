@@ -1,7 +1,7 @@
+import sys
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
-import sys
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -146,7 +146,7 @@ def update_answer_sheet(data):
     """
     answer_worksheet = SHEET.worksheet('user-answers')
     answer_worksheet.append_row(data)
-    print("Your answers has been successfully updated on the shreadsheet")
+    print("Your answer has been successfully updated on the shreadsheet")
 
 
 def update_stats_sheet():
@@ -175,7 +175,7 @@ def menu():
     action = input("Enter A, B or C: ").capitalize()
 
     while action not in ['a', 'b', 'c', 'A', 'B', 'C']:
-        print("/nInvalid input.")
+        print("\nInvalid input.")
         action = input("Enter A, B or C: ").capitalize()
 
     if action == 'A':
@@ -186,9 +186,11 @@ def menu():
         update_stats_sheet()
     elif action == 'B':
         print("\nWelcome to Psychotest statistics.")
-        print("Check how many people choose the answers for each question.\n")
+        print("Check how many people choose the answer for each question.\n")
         test_result = SHEET.worksheet('answers-stats').get_all_values()
-        pprint(test_result)
+
+        for row in test_result:
+            print('\t'.join(row))
     elif action == 'C':
         print("/nTest Ending. Good bye")
         sys.exit()
