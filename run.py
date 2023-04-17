@@ -1,5 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
+import sys
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -65,7 +67,7 @@ options = (
      "e. Advertisement was tempting"),
 )
 
-print("Welcome to Psyshopath Test")
+print("Welcome to the Psychopath Test")
 print("See if you are a psychopath or not")
 username = input("Enter your name: ").capitalize()
 while username.strip() == "":
@@ -144,7 +146,7 @@ def update_answer_sheet(data):
     """
     answer_worksheet = SHEET.worksheet('user-answers')
     answer_worksheet.append_row(data)
-    print("Successfully updated on the shreadsheet")
+    print("Your answers has been successfully updated on the shreadsheet")
 
 
 def update_stats_sheet():
@@ -162,10 +164,41 @@ def update_stats_sheet():
         stats_worksheet.update_cell(row_map[answer], ind+2, cell.value)
 
 
+def menu():
+    """
+    Show the selections to action after the test is done.
+    """
+    print("\nMENU")
+    print("A - Restart Test")
+    print("B - Show Test Statistics")
+    print('C - End Test')
+    action = input("Enter A, B or C: ").capitalize()
+
+    while action not in ['a', 'b', 'c', 'A', 'B', 'C']:
+        print("/nInvalid input.")
+        action = input("Enter A, B or C: ").capitalize()
+
+    if action == 'A':
+        print("\nRestarting Test...")
+        start_test()
+        check_answers()
+        update_answer_sheet(user_answers)
+        update_stats_sheet()
+    elif action == 'B':
+        print("\nWelcome to Psychotest statistics.")
+        print("Check how many people choose the answers for each question.")
+        test_result = SHEET.worksheet('answers-stats').get_all_values()
+        pprint(test_result)
+    elif action == 'C':
+        print("/nTest Ending. Good bye")
+        sys.exit()
+
+
 start_test()
 check_answers()
 update_answer_sheet(user_answers)
 update_stats_sheet()
+menu()
 
 # if user_answers in (psycho_answers_first, psycho_answers_second):
 #     print(f"\n{username}... You are a psychopath")
