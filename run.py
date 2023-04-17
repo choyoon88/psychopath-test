@@ -69,12 +69,12 @@ options = (
 
 print("Welcome to the Psychopath Test")
 print("See if you are a psychopath or not")
-username = input("Enter your name: ").capitalize()
+username = input("Enter your name: ").upper()
 while username.strip() == "":
     username = input("Invalid input. Please enter your name: ")
 print(f"Hello, {username}!")
 
-user_country = input("Enter your country name: ").capitalize()
+user_country = input("Enter your country name: ").upper()
 while not user_country.strip():
     user_country = input("Invalid input. Please enter your country: ")
 
