@@ -65,6 +65,8 @@ options = (
      "e. Advertisement was tempting"),
 )
 
+print("Welcome to Psyshopath Test")
+print("See if you are a psychopath or not")
 username = input("Enter your name: ").capitalize()
 while username.strip() == "":
     username = input("Invalid input. Please enter your name: ")
@@ -86,26 +88,32 @@ print("You will be given 6 questions with 5 answer options each.")
 print("Select the one that comes to your mind straight away.")
 print("DO NOT OVER THINK!")
 
+
 start = input("\npress Enter to contiune...")
 
-i = 0
 psycho_answers_first = ['d', 'd', 'd', 'd', 'a', 'a']
 psycho_answers_second = ['d', 'e', 'd', 'd', 'a', 'a']
 user_answers = []
 
-for question in questions:
-    print('\n----------------------------------------------------------------')
-    print(question)
-    print('----------------------------------------------------------------')
 
-    for option in options[i]:
-        print(option)
-    user_answer = input("Enter a, b, c, d or e: ").lower()
+def start_test():
+    """
+    Starting the test
+    """
+    i = 0
+    for question in questions:
+        print('\n------------------------------------------------------------')
+        print(question)
+        print('------------------------------------------------------------')
 
-    while user_answer.lower() not in ['a', 'b', 'c', 'd', 'e']:
-        user_answer = input("Please answer with a, b, c, d, e: ").lower()
-    user_answers.append(user_answer)
-    i += 1
+        for option in options[i]:
+            print(option)
+        user_answer = input("Enter a, b, c, d or e: ").lower()
+
+        while user_answer.lower() not in ['a', 'b', 'c', 'd', 'e']:
+            user_answer = input("Please answer with a, b, c, d, e: ").lower()
+        user_answers.append(user_answer)
+        i += 1
 
 
 def check_answers():
@@ -154,6 +162,7 @@ def update_stats_sheet():
         stats_worksheet.update_cell(row_map[answer], ind+2, cell.value)
 
 
+start_test()
 check_answers()
 update_answer_sheet(user_answers)
 update_stats_sheet()
