@@ -196,6 +196,7 @@ def menu():
 
     if action == 'A':
         print("\nRestarting Test...")
+
     elif action == 'B':
         print("\nWelcome to Psychotest statistics.")
         print("Check how many people chose the answer for each question.\n")
@@ -204,9 +205,11 @@ def menu():
         for row in test_result:
             print('\t'.join(row))
         back_to_menu()
+
     elif action == 'C':
         print("\nTest Ending. Good bye")
         sys.exit()
+
     elif action == 'D':
         print('\nQ1. Psychopath blames on others such as "Mirror is dirty"')
         print('\nQ2. It is said that psychopath chooses eyes or a heart')
