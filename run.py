@@ -1,5 +1,6 @@
 import sys
 import gspread
+import pyfiglet
 from google.oauth2.service_account import Credentials
 
 
@@ -67,6 +68,8 @@ options = (
      "e. Advertisement was tempting"),
 )
 
+ascii_banner = pyfiglet.figlet_format("AM I PSYCHOPATH?")
+print(ascii_banner)
 print("Welcome to the Psychopath Test")
 print("See if you are a psychopath or not")
 username = input("Enter your name: ").upper()
@@ -245,3 +248,4 @@ menu()
 #     current_val = stats_worksheet.acell(cell_to_update).value
 #     new_val = int(current_val) + 1
 #     stats_worksheet.update_acell(cell_to_update, new_val)
+
