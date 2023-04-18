@@ -228,12 +228,14 @@ def menu():
         sys.exit()
 
     elif action == 'D':
-        print('\nQ1. Psychopath blames on others such as "Mirror is dirty"')
-        print('\nQ2. It is said that psychopath chooses eyes or a heart')
-        print('\nQ3. 3% of people chose either a person of different sex \n\
-or a dog. Psychopath answer was mostly a dog, the animal disturbs their crime')
+        print('\nQ1. Psychopath blames on others such as "Mirror is dirty".')
+        print('\nQ2. Psychopath chose either eyes or a heart.')
+        print('\nQ3. People with criminal record chose \n\
+either a person of different sex or a dog. \n\
+Psychopath\' answer was mostly a dog, \n\
+the animal disturbs their act of crime.')
         print('\nQ4. Ordinary people chose the colour that \n\
-reflects their feeling, whereas psychopath, \n\
+reflects their feeling, whereas psychopath \n\
 who has difficulty knowing their own feeling \n\
 chose the one with no colour.')
         print('\nQ5. Psychopath chose to hide behind the door \n\
