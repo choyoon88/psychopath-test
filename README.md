@@ -36,6 +36,6 @@ Happy coding!
 
 
 ### Credit
-Test question was taken from https://kr.vonvon.me/quiz/60
-Flowchart from Excalidraw https://excalidraw.com/
-ASCII artwork instruction https://www.devdungeon.com/content/create-ascii-art-text-banners-python
+- Test question was taken from https://kr.vonvon.me/quiz/60
+- Flowchart from Excalidraw https://excalidraw.com/
+- ASCII artwork instruction https://www.devdungeon.com/content/create-ascii-art-text-banners-python
