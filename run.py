@@ -248,4 +248,3 @@ menu()
 #     current_val = stats_worksheet.acell(cell_to_update).value
 #     new_val = int(current_val) + 1
 #     stats_worksheet.update_acell(cell_to_update, new_val)
-
