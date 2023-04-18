@@ -23,7 +23,7 @@ stats = SHEET.worksheet('answers-stats')
 # data = stats.get_all_values()
 
 questions = [
-    "1) You are looking at a mirror, but unsatisfied, \n\
+    "1) You are looking at a mirror, but unsatisfied. \n\
     Why is that?",
     "2) There is a portrait of a wounded solider. \n\
     Which part of the body is wounded?",
@@ -232,7 +232,7 @@ def menu():
         print('\nQ2. Psychopath chose either eyes or a heart.')
         print('\nQ3. People with criminal record chose \n\
 either a person of different sex or a dog. \n\
-Psychopath\' answer was mostly a dog, \n\
+Psychopath\'s answer was mostly a dog, \n\
 the animal disturbs their act of crime.')
         print('\nQ4. Ordinary people chose the colour that \n\
 reflects their feeling, whereas psychopath \n\
