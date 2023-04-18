@@ -72,14 +72,15 @@ ascii_banner = pyfiglet.figlet_format("AM I PSYCHOPATH?")
 print(ascii_banner)
 print("Welcome to the Psychopath Test")
 print("See if you are a psychopath or not")
-username = input("Enter your name: ").upper()
+
+username = input("Enter your name: \n").upper()
 while username.strip() == "":
-    username = input("Invalid input. Please enter your name: ")
+    username = input("Invalid input. Please enter your name: \n")
 print(f"Hello, {username}!")
 
-user_country = input("Enter your country name: ").upper()
+user_country = input("Enter your country name: \n").upper()
 while not user_country.strip():
-    user_country = input("Invalid input. Please enter your country: ")
+    user_country = input("Invalid input. Please enter your country: \n")
 
 
 print(f"\nWelcome, {username} from {user_country}!")
@@ -94,7 +95,7 @@ print("Select the one that comes to your mind straight away.")
 print("DO NOT OVER THINK!")
 
 
-start = input("\npress Enter to contiune...")
+start = input("\npress Enter to contiune...\n")
 
 psycho_answers_first = ['d', 'd', 'd', 'd', 'a', 'a']
 psycho_answers_sec = ['d', 'e', 'd', 'd', 'a', 'a']
@@ -113,10 +114,10 @@ def start_test():
 
         for option in options[i]:
             print(option)
-        user_answer = input("Enter a, b, c, d or e: ").lower()
+        user_answer = input("Enter a, b, c, d or e: \n").lower()
 
         while user_answer.lower() not in ['a', 'b', 'c', 'd', 'e']:
-            user_answer = input("Please answer with a, b, c, d, e: ").lower()
+            user_answer = input("Please answer with a, b, c, d, e: \n").lower()
         user_answers.append(user_answer)
         i += 1
 
@@ -171,13 +172,13 @@ def back_to_menu():
     """
     Function for going back to see the menu options.
     """
-    go_back_menu = input('\nWould you like to see the menu? (y/n)').lower()
-    while go_back_menu not in ['y', 'n', 'Y', 'N']:
+    go_menu = input('\nWould you like to see the menu? (y/n)\n').lower()
+    while go_menu not in ['y', 'n', 'Y', 'N']:
         print('Invalid answer.')
-        go_back_menu = input('\nWould you like to see the menu? (y/n)').lower()
-    if go_back_menu == 'y':
+        go_menu = input('\nWould you like to see the menu? (y/n)\n').lower()
+    if go_menu == 'y':
         menu()
-    elif go_back_menu == 'n':
+    elif go_menu == 'n':
         print("\nTest Ending. Good bye")
         sys.exit()
 
@@ -185,20 +186,30 @@ def back_to_menu():
 def menu():
     """
     Show the selections to action after the test is done.
+    a: restarts the test and also clears the user_answers list.
+    b: See the stats for the total numbers of each answer.
+    c: End terminal
+    d: See the explanation for each question.
     """
     print("\nMENU")
     print("A - Restart Test")
     print("B - Show Test Statistics")
     print('C - End Test')
     print('D - Answer Explanation')
-    action = input("\nEnter A, B, C or D: ").capitalize()
+    action = input("\nEnter A, B, C or D: \n").capitalize()
 
     while action not in ['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D']:
         print("\nInvalid input.")
-        action = input("Enter A, B, C or D: ").capitalize()
+        action = input("Enter A, B, C or D: \n").capitalize()
 
     if action == 'A':
+        user_answers.clear()
         print("\nRestarting Test...")
+        start_test()
+        check_answers()
+        update_answer_sheet(user_answers)
+        update_stats_sheet()
+        menu()
 
     elif action == 'B':
         print("\nWelcome to Psychotest statistics.")
