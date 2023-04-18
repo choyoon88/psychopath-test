@@ -1,3 +1,6 @@
+"""
+This is a short psychopath test aimed only for fun.
+"""
 import sys
 import gspread
 import pyfiglet
