@@ -1,5 +1,5 @@
 """
-This is a short psychopath test aimed only for fun.
+This is a short psychological psychopath test aimed only for fun.
 """
 import sys
 import gspread
@@ -74,12 +74,20 @@ options = (
 ascii_banner = pyfiglet.figlet_format("AM I PSYCHOPATH?")
 print(ascii_banner)
 print("Welcome to the Psychopath Test")
-print("See if you are a psychopath or not")
+print("See if you are a psychopath or not\n")
+print("=================================================")
+print("WARNING: This is not a verified psychopath test.")
+print("This is only for entertainment purpose.")
+print("=================================================\n")
+print("============================================================")
+print("We do not collect your personal data such as name or country.")
+print("Only selected answers will be used for counting stats.")
+print("============================================================\n")
 
-username = input("Enter your name: \n").upper()
+username = input("\nEnter your name: \n").upper()
 while username.strip() == "":
     username = input("Invalid input. Please enter your name: \n")
-print(f"Hello, {username}!")
+print(f"Hello, {username}!\n")
 
 user_country = input("Enter your country name: \n").upper()
 while not user_country.strip():
@@ -88,10 +96,7 @@ while not user_country.strip():
 
 print(f"\nWelcome, {username} from {user_country}!")
 print(f"Let us see if you are a psychopath from {user_country}\n")
-print("=================================================")
-print("WARNING: This is not a verified psychopath test.")
-print("This is only for entertainment purpose.")
-print("=================================================\n")
+
 print("INSTRUCTION:")
 print("You will be given 6 questions with 5 answer options each.")
 print("Select the one that comes to your mind straight away.")
@@ -219,8 +224,10 @@ def menu():
         print("Check how many people chose the answer for each question.\n")
         test_result = SHEET.worksheet('answers-stats').get_all_values()
 
+        print("===================================================")
         for row in test_result:
             print('\t'.join(row))
+        print("===================================================")
         back_to_menu()
 
     elif action == 'C':
