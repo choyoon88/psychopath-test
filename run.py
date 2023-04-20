@@ -79,12 +79,13 @@ print("=================================================")
 print("WARNING: This is not a verified psychopath test.")
 print("This is only for entertainment purpose.")
 print("=================================================\n")
+start = input("Press Enter to contiune...\n")
 print("============================================================")
 print("We do not collect your personal data such as name or country.")
 print("Only selected answers will be used for counting stats.")
 print("============================================================\n")
 
-username = input("\nEnter your name: \n").upper()
+username = input("Enter your name: \n").upper()
 while username.strip() == "":
     username = input("Invalid input. Please enter your name: \n")
 print(f"Hello, {username}!\n")
@@ -103,7 +104,7 @@ print("Select the one that comes to your mind straight away.")
 print("DO NOT OVER THINK!")
 
 
-start = input("\npress Enter to contiune...\n")
+start = input("\nPress Enter to contiune...\n")
 
 psycho_answers_first = ['d', 'd', 'd', 'd', 'a', 'a']
 psycho_answers_sec = ['d', 'e', 'd', 'd', 'a', 'a']
