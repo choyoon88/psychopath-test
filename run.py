@@ -1,6 +1,7 @@
 """
 This is a short psychological psychopath test aimed only for fun.
 """
+import time
 import sys
 import gspread
 import pyfiglet
@@ -85,36 +86,37 @@ print("We do not collect your personal data such as name or country.")
 print("Only selected answers will be used for counting stats.")
 print("============================================================\n")
 
-username = input("Enter your name: \n").upper()
-while username.strip() == "":
-    username = input("Invalid input. Please enter your name: \n")
-print(f"Hello, {username}!\n")
-
-user_country = input("Enter your country name: \n").upper()
-while not user_country.strip():
-    user_country = input("Invalid input. Please enter your country: \n")
-
-
-print(f"\nWelcome, {username} from {user_country}!")
-print(f"Let us see if you are a psychopath from {user_country}\n")
-
-print("INSTRUCTION:")
-print("You will be given 6 questions with 5 answer options each.")
-print("Select the one that comes to your mind straight away.")
-print("DO NOT OVER THINK!")
-
-
-start = input("\nPress Enter to contiune...\n")
 
 psycho_answers_first = ['d', 'd', 'd', 'd', 'a', 'a']
 psycho_answers_sec = ['d', 'e', 'd', 'd', 'a', 'a']
 user_answers = []
 
 
-def start_test():
+def test_start():
     """
-    Starting the test
+    Function for the entry before starting the actual test.
     """
+    username = input("Enter your name: \n").upper()
+    while username.strip() == "":
+        username = input("Invalid input. Please enter your name: \n")
+    print(f"Hello, {username}!\n")
+
+    user_country = input("Enter your country name: \n").upper()
+    while not user_country.strip():
+        user_country = input("Invalid input. Please enter your country: \n")
+
+    print(f"\nWelcome, {username} from {user_country}!")
+    print(f"Let us see if you are a psychopath from {user_country}\n")
+
+    print("INSTRUCTION:")
+    print("You will be given 6 questions with 5 answer options each.")
+    print("Select the one that comes to your mind straight away.")
+    print("DO NOT OVER THINK!")
+    input("\nPress Enter to contiune...\n")
+
+    # Iterate questions
+    # User should answer with a b c d or e
+    # otherwise invalid input
     i = 0
     for question in questions:
         print('\n------------------------------------------------------------')
@@ -130,15 +132,11 @@ def start_test():
         user_answers.append(user_answer)
         i += 1
 
-
-def check_answers():
-    """
-    Check if the user's answer are the same as in the
-    two lists of psycho's answer.
-    Answers must meet the same alphabet on the same index.
-    And count how many same answers were found
-    to see if the user is a psychopath
-    """
+    # Check if the user's answer are the same as in the
+    # two lists of psycho's answer.
+    # Answers must meet the same alphabet on the same index.
+    # And count how many same answers were found
+    # to see if the user is a psychopath"""
     true_answers = []
     for index, answer in enumerate(user_answers):
         if answer in (psycho_answers_first[index], psycho_answers_sec[index]):
@@ -188,7 +186,7 @@ def back_to_menu():
     if go_menu == 'y':
         menu()
     elif go_menu == 'n':
-        print("\nTest Ending. Good bye")
+        print("\nTest Ending. Goodbye")
         sys.exit()
 
 
@@ -214,8 +212,8 @@ def menu():
     if action == 'A':
         user_answers.clear()
         print("\nRestarting Test...")
-        start_test()
-        check_answers()
+        time.sleep(2)
+        test_start()
         update_answer_sheet(user_answers)
         update_stats_sheet()
         menu()
@@ -224,6 +222,7 @@ def menu():
         print("\nWelcome to Psychotest statistics.")
         print("Check how many people chose the answer for each question.\n")
         test_result = SHEET.worksheet('answers-stats').get_all_values()
+        time.sleep(2)
 
         print("===================================================")
         for row in test_result:
@@ -232,7 +231,7 @@ def menu():
         back_to_menu()
 
     elif action == 'C':
-        print("\nTest Ending. Good bye")
+        print("\nTest Ending. Goodbye")
         sys.exit()
 
     elif action == 'D':
@@ -254,8 +253,7 @@ so they can kill them with more pain.')
         back_to_menu()
 
 
-start_test()
-check_answers()
+test_start()
 update_answer_sheet(user_answers)
 update_stats_sheet()
 menu()
