@@ -93,7 +93,25 @@ There are total 6 questions each has 5 answer options. User should select one an
 
 ## Testing
 
-
+| Action | Expected Behavior    | Pass or Fail    |
+| :---:   | :---: | :---: |
+| Visit to the deployed site | run.py should run | P |
+| Press Enter | Disclaimer and name input field should show up | P |
+| Press Enter without any input | 'Invalid input' message | P |
+| Type anything on name input | 'Hello, {username}' & Enter country input | P |
+| Press Enter without any input | 'Invalid input' message | P |
+| Type anything on the country input | Greeting message 'Welcome, {username} from {country}!' & Instruction | P | 
+| Press Enter | First question, answer options and answer input | P |
+| Type anything except a, b, c, d, or e | 'Please answer with a, b, c, d, e' message | P |
+| Type a, b, c, d or e | Next question | P |
+| On sixth question, type a, b, c, d or e | Show result & 'Answer being updated to spreadsheet' message & Menu option | P | 
+| On Menu, type anything except a, b, c or d | 'Invalid input' message & Enter A, B, C or D input | P |
+| On menu, type a or A | Restart test from enter name | P | 
+| On menu, type b or B | Print statistics table | P |
+| On menu, type c or C | End console | P |
+| On menu, type d or D | Print test explanation for each question | P |
+| After menu A, B, D is done, from 'Would you like to see the menu' type y ot Y | See the menu | P |
+| After menu A, B, D is done, from 'Would you like to see the menu' type n ot N | End console | P |
 
 
 ## Credits and References
