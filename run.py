@@ -21,8 +21,6 @@ SHEET = GSPREAD_CLIENT.open('psychopath-test')
 
 stats = SHEET.worksheet('answers-stats')
 
-# data = stats.get_all_values()
-
 questions = [
     "1) You are looking at a mirror, but unsatisfied. \n\
     Why is that?",
@@ -94,7 +92,9 @@ user_answers = []
 
 def test_start():
     """
-    Function for the entry before starting the actual test.
+    Start the test with welcome message
+    Function asking to enter the user name and country
+    will be used for welcome message and later on the test result
     """
     username = input("Enter your name: \n").upper()
     while username.strip() == "":
@@ -136,7 +136,7 @@ def test_start():
     # two lists of psycho's answer.
     # Answers must meet the same alphabet on the same index.
     # And count how many same answers were found
-    # to see if the user is a psychopath"""
+    # to see if the user is a psychopath
     true_answers = []
     for index, answer in enumerate(user_answers):
         if answer in (psycho_answers_first[index], psycho_answers_sec[index]):
@@ -154,6 +154,8 @@ def test_start():
 def update_answer_sheet(data):
     """
     Update user's answer on the user-answers spreadsheet
+    'data' parameter will be items in the user_answers list
+    and appends as a new row in user-answers worksheet.
     """
     answer_worksheet = SHEET.worksheet('user-answers')
     answer_worksheet.append_row(data)
@@ -257,16 +259,3 @@ test_start()
 update_answer_sheet(user_answers)
 update_stats_sheet()
 menu()
-
-# if user_answers in (psycho_answers_first, psycho_answers_sec):
-#     print(f"\n{username}... You are a psychopath")
-#     print(f"{country} should be warned!")
-# else:
-#     print(f"\n{username}... You might not be a psychopath")
-#     print(f"People in {country} are safe... for now!")
-
-# if answer == 'a':
-#     cell_to_update = 'B2'
-#     current_val = stats_worksheet.acell(cell_to_update).value
-#     new_val = int(current_val) + 1
-#     stats_worksheet.update_acell(cell_to_update, new_val)

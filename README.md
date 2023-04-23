@@ -6,12 +6,12 @@ There are total 6 questions each has 5 answer options. User should select one an
 [*Click here to see the Live Deployment*](https://psychopath-test.herokuapp.com/)
 
 ## Flowchart
-![flowchart](readme-images/flowchart.png)
+![flowchart](readme-images/flowchart2.png)
 
 ## Features
 
 ### 1. Welcome
-- User is welcomed with an ASCII artwork saying 'AM I PSYCHOPATH?' with welcome messages. Warning message letting the user know that his is not a verified test for checking whether they are a psychopath. 
+- User is welcomed with an ASCII artwork saying 'AM I PSYCHOPATH?' with welcome messages. Warning message letting the user know that this is not a verified test for checking whether they are a psychopath. 
 - Then user is asked to press Enter to continue. 
 
   ![welcome](readme-images/01_welcome.png)
@@ -77,10 +77,13 @@ There are total 6 questions each has 5 answer options. User should select one an
 ### 8. Would you like to see the menu?
 - After selecting A, B or D from the menu, the user will then asked to see the menu or not. 
   - y: Starts the menu function to show the menu.  
-  ![seemenuTrue](readme-images/011_seethemenuTrue.png)
+  ![seemenuY](readme-images/011_seethemenuTrue.png)
 
   - n: End the console.
-  ![seemenuFalse](readme-images/012_seethemenuFalse.png)
+  ![seemenuN](readme-images/012_seethemenuFalse.png)
+
+  - Input other than y or n: Print 'Invalid answer' message show up and have the 'Would you like to see the menu' input again.
+  ![seemenuInvalid](readme-images/013_menuInvalidInput.png)
 
 
 ## Python Validation Check
@@ -110,8 +113,9 @@ There are total 6 questions each has 5 answer options. User should select one an
 | On menu, type b or B | Print statistics table | P |
 | On menu, type c or C | End console | P |
 | On menu, type d or D | Print test explanation for each question | P |
-| After menu A, B, D is done, from 'Would you like to see the menu' type y ot Y | See the menu | P |
-| After menu A, B, D is done, from 'Would you like to see the menu' type n ot N | End console | P |
+| After menu B or D from 'Would you like to see the menu' type y or Y | See the menu | P |
+| After menu B or D from 'Would you like to see the menu' type n or N | End console | P |
+| After menu B or D from 'Would you like to see the menu' type else than y or n | 'Invalid input. Would you like to see the menu' | P |
 
 
 ## Credits and References
