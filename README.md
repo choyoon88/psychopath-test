@@ -6,7 +6,7 @@ There are total 6 questions each has 5 answer options. User should select one an
 [*Click here to see the Live Deployment*](https://psychopath-test.herokuapp.com/)
 
 ## Flowchart
-![flowchart](readme-images/flowchart2.png)
+![flowchart](readme-images/flowchart3.png)
 
 ## Features
 
@@ -93,6 +93,14 @@ There are total 6 questions each has 5 answer options. User should select one an
 
 ![pep8 python validator check](readme-images/pep8check.png)
 
+
+## Lighthouse Check
+
+- Desktop
+![desktop](readme-images/lighthouse-desktop.png)
+
+- Mobile
+![mobile](readme-images/lighthouse_mobile.png)
 
 ## Testing
 

@@ -19,8 +19,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('psychopath-test')
 
-stats = SHEET.worksheet('answers-stats')
-
 questions = [
     "1) You are looking at a mirror, but unsatisfied. \n\
     Why is that?",
