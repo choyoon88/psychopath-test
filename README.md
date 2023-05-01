@@ -55,7 +55,8 @@ There are total 6 questions each has 5 answer options. User should select one an
 
   - If the count is 5 ~ 6, user will have a message '{username}...You are a psychopath.. {country} should be warned!'
   ![psychoTrue](readme-images/07c_psychoTrue.png)
-- After each result message, the selected answers will be added to the psychopath-test spreadsheet on Google Docs that should be used to count every selected answers so that the program could make a statistics of the total result.
+- After each result message, the selected answers will be added to the psychopath-test [spreadsheet](https://docs.google.com/spreadsheets/d/1bo-Los9Mt4UKrzGaHcbPn2Q2GhWrIb03NN53P9FEPwQ/edit#gid=0) on Google Docs that should be used to count every selected answers so that the program could make a statistics of the total result. 
+- In the spreadsheet, [user-answers sheet](https://docs.google.com/spreadsheets/d/1bo-Los9Mt4UKrzGaHcbPn2Q2GhWrIb03NN53P9FEPwQ/edit#gid=0) accumulates all the answers from every test by adding a new row, and [answers-stats sheet](https://docs.google.com/spreadsheets/d/1bo-Los9Mt4UKrzGaHcbPn2Q2GhWrIb03NN53P9FEPwQ/edit#gid=812669833) will calculate every selected answers for each question.
 - Menu with 4 different selections will also be shown up. 
 
 ### 7. Menu
@@ -125,9 +126,38 @@ There are total 6 questions each has 5 answer options. User should select one an
 | After menu B or D from 'Would you like to see the menu' type n or N | End console | P |
 | After menu B or D from 'Would you like to see the menu' type else than y or n | 'Invalid input. Would you like to see the menu' | P |
 
+## Deployment
+
+- The site was deployed to Heroku. The steps to deploy are as follows: 
+  1. Create a Heroku account.
+  2. From the Heroku dashboard, select 'create new app' and create app by adding the app name 'psychopath-test' and choosing the region 'Europe'.
+  3. On the tab menu, go to Settings.
+  4. Scroll to 'Config Vars'.
+  5. From my Gitpod, copy every contents from my creds.json file. 
+  6. Move back to Heroku, add a config vars with the key name CREDS and the value of pasting the creds.json contents.
+  7. Add one more config vars with the key name PORT and the value 8000.
+  8. Scroll to 'Buildpacks'. 
+  9. Select 'Add buildpack' and select python and save. 
+  10. Select 'Add buildpack' and select nodejs and save. Make sure python is on the top.
+  11. Scroll up to see the tab menu and select Deploy.
+  12. on Deployment method, select Github.
+  13. Connect to Github. 
+  14. Search for my repository psychopath-test, and connect.
+  15. Select either automatic deploys or manual deploy. 
+
+## Local Deployment
+
+- Local deployment could be done following the steps. 
+  1. From my Gitpod repository, click '<>Code' right next to green 'Gitpod' icon. 
+  2. Select 'local' and HTTPS.
+  3. Copy the HTTPS address: https://github.com/choyoon88/psychopath-test.git
+  4. Open terminal on the Mac computer.
+  5. Type **_git clone_** and paste the HTTPS address. 
+  6. Install the git developer tools and download the command line in your computer. 
 
 ## Credits and References
 - Test question was taken from Korean psychological test website [vonvon](https://kr.vonvon.me/quiz/60)
+- Python main study was conducted by [CodeInstitute](https://learn.codeinstitute.net/dashboard)
 - Extra Python study [RealPython](https://realpython.com/)
 - Extra Python reading [Python 3.11.3 documentation](https://docs.python.org/3/index.html)
 - Flowchart from [Excalidraw](https://excalidraw.com/)

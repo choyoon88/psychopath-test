@@ -156,7 +156,7 @@ def test_start():
 
 def update_answer_sheet(data):
     """
-    Update user's answer on the user-answers spreadsheet
+    Update user's answer on the user-answers spreadsheet.
     'data' parameter will be items in the user_answers list
     and appends as a new row in user-answers worksheet.
     """
