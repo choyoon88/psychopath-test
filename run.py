@@ -90,6 +90,10 @@ user_answers = []
 
 def test_start():
     """
+    test_start function contains parts of
+    welcome message,
+    show question and answer,
+    check user answer list with psycho's answer.
     Start the test with welcome message
     Function asking to enter the user name and country
     will be used for welcome message and later on the test result
@@ -112,9 +116,10 @@ def test_start():
     print("DO NOT OVER THINK!")
     input("\nPress Enter to contiune...\n")
 
-    # Iterate questions
+    # Iterate questions.
     # User should answer with a b c d or e
-    # otherwise invalid input
+    # otherwise show invalid input
+    # asking to input with either a b c d or e
     i = 0
     for question in questions:
         print('\n------------------------------------------------------------')
