@@ -31,13 +31,15 @@ There are total 6 questions each has 5 answer options. User should select one an
 
 ### 4. Instruction
 - User is greeted by the name and the country they entered. 
+- Country is capitalized.
 - Instruction of how to do the test is shown. 
 - User should press Enter to continue.
   ![instsruction](readme-images/04_instruction.png)
 
 ### 5. Question
 - Question from 1 to 6 will show up accordingly.
-- User should answer by entering either a, b, e, d or e. 
+- User should answer by entering either a, b, c, d or e.
+- Inputting the answer with capital letters will also be accepted since all answers will be converted to lowercase.
 - Next question will show up once the user enters the answer.
   ![question](readme-images/05_question.png)
 
@@ -63,7 +65,7 @@ There are total 6 questions each has 5 answer options. User should select one an
 - Menu have 4 options to choose. 
 - Input answers will be capitalized.
 
-  - A - Restart Test: Restart the test from the entering name.
+  - A - Restart Test: Restart the test from entering name.
   ![restart](readme-images/08_restart.png)
 
   - B - Show Test Statistics: Show the total number of selected answers for each question.
@@ -83,7 +85,7 @@ There are total 6 questions each has 5 answer options. User should select one an
   - n: End the console.
   ![seemenuN](readme-images/012_seethemenuFalse.png)
 
-  - Input other than y or n: Print 'Invalid answer' message show up and have the 'Would you like to see the menu' input again.
+  - Input anything other than y or n: 'Invalid answer' message show up and have the 'Would you like to see the menu' input again.
   ![seemenuInvalid](readme-images/013_menuInvalidInput.png)
 
 
@@ -117,14 +119,14 @@ There are total 6 questions each has 5 answer options. User should select one an
 | Type anything except a, b, c, d, or e | 'Please answer with a, b, c, d, e' message | P |
 | Type a, b, c, d or e | Next question | P |
 | On sixth question, type a, b, c, d or e | Show result & 'Answer being updated to spreadsheet' message & Menu option | P | 
-| On Menu, type anything except a, b, c or d | 'Invalid input' message & Enter A, B, C or D input | P |
-| On menu, type a or A | Restart test from enter name | P | 
+| On menu, type anything except a, b, c or d | 'Invalid input' message & Enter A, B, C or D input | P |
+| On menu, type a or A | Restart test from entering name | P | 
 | On menu, type b or B | Print statistics table | P |
 | On menu, type c or C | End console | P |
 | On menu, type d or D | Print test explanation for each question | P |
-| After menu B or D from 'Would you like to see the menu' type y or Y | See the menu | P |
-| After menu B or D from 'Would you like to see the menu' type n or N | End console | P |
-| After menu B or D from 'Would you like to see the menu' type else than y or n | 'Invalid input. Would you like to see the menu' | P |
+| After menu B or D, from 'Would you like to see the menu' type y or Y | See the menu | P |
+| After menu B or D, from 'Would you like to see the menu' type n or N | End console | P |
+| After menu B or D, from 'Would you like to see the menu' type else than y or n | 'Invalid input. Would you like to see the menu' | P |
 
 ## Deployment
 
@@ -140,7 +142,7 @@ There are total 6 questions each has 5 answer options. User should select one an
   9. Select 'Add buildpack' and select python and save. 
   10. Select 'Add buildpack' and select nodejs and save. Make sure python is on the top.
   11. Scroll up to see the tab menu and select Deploy.
-  12. on Deployment method, select Github.
+  12. On Deployment method, select Github.
   13. Connect to Github. 
   14. Search for my repository psychopath-test, and connect.
   15. Select either automatic deploys or manual deploy. 
@@ -148,7 +150,7 @@ There are total 6 questions each has 5 answer options. User should select one an
 ## Local Deployment
 
 - Local deployment could be done following the steps. 
-  1. From my Gitpod repository, click '<>Code' right next to green 'Gitpod' icon. 
+  1. From my Github repository, click '<>Code' right next to green 'Gitpod' icon. 
   2. Select 'local' and HTTPS.
   3. Copy the HTTPS address: https://github.com/choyoon88/psychopath-test.git
   4. Open terminal on the Mac computer.
