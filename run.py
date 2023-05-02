@@ -68,19 +68,24 @@ options = (
      "e. Advertisement was tempting"),
 )
 
-ascii_banner = pyfiglet.figlet_format("AM I PSYCHOPATH?")
-print(ascii_banner)
-print("Welcome to the Psychopath Test")
-print("See if you are a psychopath or not\n")
-print("=================================================")
-print("WARNING: This is not a verified psychopath test.")
-print("This is only for entertainment purpose.")
-print("=================================================\n")
-start = input("Press Enter to contiune...\n")
-print("============================================================")
-print("We do not collect your personal data such as name or country.")
-print("Only selected answers will be used for counting stats.")
-print("============================================================\n")
+
+def welcome():
+    """
+    Welcome message and disclaimer.
+    """
+    ascii_banner = pyfiglet.figlet_format("AM I PSYCHOPATH?")
+    print(ascii_banner)
+    print("Welcome to the Psychopath Test")
+    print("See if you are a psychopath or not\n")
+    print("=================================================")
+    print("WARNING: This is not a verified psychopath test.")
+    print("This is only for entertainment purpose.")
+    print("=================================================\n")
+    input("Press Enter to contiune...\n")
+    print("============================================================")
+    print("DISCLAIMER: We do not collect your personal data.")
+    print("Only selected answers will be used for counting stats.")
+    print("============================================================\n")
 
 
 psycho_answers_first = ['d', 'd', 'd', 'd', 'a', 'a']
@@ -185,7 +190,7 @@ def back_to_menu():
     Function for going back to see the menu options.
     """
     go_menu = input('\nWould you like to see the menu? (y/n)\n').lower()
-    while go_menu not in ['y', 'n', 'Y', 'N']:
+    while go_menu not in ['y', 'n']:
         print('Invalid answer.')
         go_menu = input('\nWould you like to see the menu? (y/n)\n').lower()
     if go_menu == 'y':
@@ -204,17 +209,17 @@ def menu():
     d: See the explanation for each question.
     """
     print("\nMENU")
-    print("A - Restart Test")
-    print("B - Show Test Statistics")
-    print('C - End Test')
-    print('D - Answer Explanation')
-    action = input("\nEnter A, B, C or D: \n").capitalize()
+    print("a - Restart Test")
+    print("b - Show Test Statistics")
+    print('c - End Test')
+    print('d - Answer Explanation')
+    action = input("\nEnter a, b, c or d: \n").lower()
 
-    while action not in ['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D']:
+    while action not in ['a', 'b', 'c', 'd']:
         print("\nInvalid input.")
-        action = input("Enter A, B, C or D: \n").capitalize()
+        action = input("Enter a, b, c or d: \n").lower()
 
-    if action == 'A':
+    if action == 'a':
         user_answers.clear()
         print("\nRestarting Test...")
         time.sleep(2)
@@ -223,7 +228,7 @@ def menu():
         update_stats_sheet()
         menu()
 
-    elif action == 'B':
+    elif action == 'b':
         print("\nWelcome to Psychotest statistics.")
         print("Check how many people chose the answer for each question.\n")
         test_result = SHEET.worksheet('answers-stats').get_all_values()
@@ -235,11 +240,11 @@ def menu():
         print("===================================================")
         back_to_menu()
 
-    elif action == 'C':
+    elif action == 'c':
         print("\nTest Ending. Goodbye")
         sys.exit()
 
-    elif action == 'D':
+    elif action == 'd':
         print('\nQ1. Psychopath blames on others such as "Mirror is dirty".')
         print('\nQ2. Psychopath chose either eyes or a heart.')
         print('\nQ3. People with criminal record chose \n\
@@ -258,6 +263,7 @@ so they can kill them with more pain.')
         back_to_menu()
 
 
+welcome()
 test_start()
 update_answer_sheet(user_answers)
 update_stats_sheet()

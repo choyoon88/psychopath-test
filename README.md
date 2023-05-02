@@ -63,19 +63,22 @@ There are total 6 questions each has 5 answer options. User should select one an
 
 ### 7. Menu
 - Menu have 4 options to choose. 
-- Input answers will be capitalized.
+- Input answers will be lowercase.
 
-  - A - Restart Test: Restart the test from entering name.
+  - a - Restart Test: Restart the test from entering name.
   ![restart](readme-images/08_restart.png)
 
-  - B - Show Test Statistics: Show the total number of selected answers for each question.
+  - b - Show Test Statistics: Show the total number of selected answers for each question.
   ![stats](readme-images/09_stats.png)
 
-  - C - End Test: Quit the console.
+  - c - End Test: Quit the console.
   ![endtest](readme-images/testending.png)
   
-  - D - Answer Explanation: See which answer is the true answer as a psychopath.
+  - d - Answer Explanation: See which answer is the true answer as a psychopath.
   ![explain](readme-images/010_explanation.png)
+
+  - Invalid input other than a, b, c or d: Message 'Invalid input' will be printed and asking to enter a, b, c or d
+  ![invalidmenu]
 
 ### 8. Would you like to see the menu?
 - After selecting A, B or D from the menu, the user will then asked to see the menu or not. 
