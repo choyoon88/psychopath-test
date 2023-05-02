@@ -77,8 +77,8 @@ There are total 6 questions each has 5 answer options. User should select one an
   - d - Answer Explanation: See which answer is the true answer as a psychopath.
   ![explain](readme-images/010_explanation.png)
 
-  - Invalid input other than a, b, c or d: Message 'Invalid input' will be printed and asking to enter a, b, c or d
-  ![invalidmenu]
+  - Invalid input other than a, b, c or d: Message 'Invalid input' will be printed and ask to enter a, b, c or d
+  ![invalidmenu](readme-images/014_menuwronginput.png)
 
 ### 8. Would you like to see the menu?
 - After selecting A, B or D from the menu, the user will then asked to see the menu or not. 
