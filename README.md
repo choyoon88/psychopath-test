@@ -103,10 +103,12 @@ There are total 6 questions each has 5 answer options. User should select one an
 ## Lighthouse Check
 
 - Desktop
-![desktop](readme-images/lighthouse-desktop.png)
+
+  ![desktop](readme-images/lighthouse-desktop.png)
 
 - Mobile
-![mobile](readme-images/lighthouse_mobile.png)
+
+  ![mobile](readme-images/lighthouse_mobile.png)
 
 ## Testing
 
